@@ -8,14 +8,34 @@ package view;
  *
  * @author rasyi
  */
+import controller.KontakController;
+import java.io.*;
+import model.Kontak;
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class PengelolaanKontakFrame extends javax.swing.JFrame {
 
+    private DefaultTableModel model;
+    private KontakController controller;
     /**
      * Creates new form PengelolaanKontakFrame
      */
     public PengelolaanKontakFrame() {
         initComponents();
+        
+        controller = new KontakController();
+        model = new DefaultTableModel(new String[]{"No", "Nama", "Nomor Telepon", "Kategori"}, 0);
+
+        tblKontak.setModel(model);
+        loadContacts();
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -75,7 +95,7 @@ public class PengelolaanKontakFrame extends javax.swing.JFrame {
         jLabel2.setText("Nama Kontak");
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
-        jLabel3.setText("Nama Kontak");
+        jLabel3.setText("No Telepon");
 
         jLabel4.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
         jLabel4.setText("Kategori");
@@ -121,18 +141,19 @@ public class PengelolaanKontakFrame extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel2)
+                            .addGap(18, 18, 18)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addGap(18, 18, 18)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel3))
+                        .addGap(33, 33, 33)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField2)
                             .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
