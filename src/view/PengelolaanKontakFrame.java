@@ -426,7 +426,7 @@ private boolean validateCSVHeader(String header) {
         cmbKategori.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Keluarga", "Teman", "Kantor", " " }));
 
         jButton1.setBackground(new java.awt.Color(0, 204, 0));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Tambah");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -436,7 +436,7 @@ private boolean validateCSVHeader(String header) {
         });
 
         jButton2.setBackground(new java.awt.Color(255, 255, 0));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Edit");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -446,7 +446,7 @@ private boolean validateCSVHeader(String header) {
         });
 
         jButton3.setBackground(new java.awt.Color(255, 0, 0));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText("Hapus");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
